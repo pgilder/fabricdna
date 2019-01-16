@@ -1,0 +1,50 @@
+<template name="profile">
+  <div class="page home">
+
+    {{>nav title='Ki Health' black=true}}
+
+    <div class="content-scrollable">
+      <div class="bg-image home">
+        <h1 class="title-home">
+        <!--  <img src="img/app/logo-local.svg" alt="Local Market"/> -->
+        </h1>
+        <i class="icon ion-chevron-up icon-large animated swing"></i>
+        <span class="hours"><span class="title-callout">Kirene Gilder</span>
+        <i>Founder of EatingtoHealth.com</i></span>
+        <span class="arrow"></span>
+      </div>
+
+
+      <div class="callout-news">
+        <span class="title-callout">Mind-Blowing Vegan Chocolate Pie</span><br><hr class="small-divider"><br>
+        <!-- {{latestNews.text}} --> This magic is creamy, rich, smooth like the best chocolate pudding-meets-mousse-meets-chocolate-pots-de-creme of your life. It’s not icy or weirdly textured at all, as many alternative-type frozen desserts can be. And there’s no milk in it. Or cream. Or anything dairy-like. But there’s also no scary vegan ingredients – it’s just all things you could buy at your regular grocery store. My favorite kind of recipe.
+
+      </div>
+
+      <h2 class="list-title">What's Cooking</h2>
+      <div class="list-subtitle">See what the community is cooking</div>
+      <div class="list-activities">
+        {{#each activities}}
+          {{> activity}}
+        {{else}}
+          <div class="wrapper-message">
+            <div class="title-message">No one is cooking yet!</div>
+            <div class="subtitle-message">Share that you made a recipe and it will show up here.</div>
+          </div>
+        {{/each}}
+      </div>
+      <a href="{{pathFor 'feed'}}" class="btn-primary">See what's cooking</a>
+
+      <h2 class="list-title">Our Favorite Recipes</h2>
+      <div class="list-subtitle">Hand-picked by neighborhood chefs</div>
+      <div class="list-recipes">
+        {{#each featuredRecipes}}
+          {{> recipeItem recipe=this size='small'}}
+        {{/each}}
+      </div>
+
+      <a href="{{pathFor 'recipes'}}" class="btn-primary">Explore all our recipes</a>
+    </div>
+
+  </div>
+</template>

@@ -1,0 +1,22 @@
+<template name="nav">
+  <nav class="{{#if black}}black{{/if}}">
+    <div class="nav-group fixed-nav">
+      {{#if back}}
+        <a class="nav-item js-back" href="#"><span class="icon-arrow-left-alt"></span></a>
+      {{else}}
+        <a class="nav-item js-menu animated fadeInLeft" href="#"><span class="icon-menu"></span></a>
+        <!--<a class="nav-item js-menu2 animated fadeInRight" href="#"><span class="icon-home"></span></a>-->
+        <a class="home-icon js-menu2" href="#"><i style="color: #fff;" class="icon ion-home fav-icon icon-small animated fadeInRight"></i></a>
+      {{/if}}
+    </div>
+
+    <div class="title-page">
+      {{title}}
+      <span class="subtext-page">{{subtext}}</span>
+    </div>
+
+    <div class="nav-group right">
+      {{> Template.contentBlock }}
+    </div>
+  </nav>
+</template>
